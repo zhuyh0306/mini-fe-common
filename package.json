@@ -1,0 +1,126 @@
+{
+  "name": "mini-fe-component",
+  "version": "1.0.2",
+  "private": false,
+  "main": "dist/mini-fe-component.umd.js",
+  "module": "dist/mini-fe-component.esm.js",
+  "types": "dist/src/index.d.ts",
+  "license": "MIT",
+  "keywords": [
+    "Vue3",
+    "UI",
+    "component"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "npm run clean && npm run build:es && npm run build:umd",
+    "build:es": "rollup --config rollup.esm.config.js",
+    "build:umd": "rollup --config rollup.umd.config.js",
+    "test": "vue-cli-service test:unit",
+    "test:watch": "vue-cli-service test:unit --watch",
+    "clean": "rimraf ./dist",
+    "lint": "vue-cli-service lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "prepublishOnly": "npm run lint && npm run test&&npm run build",
+    "prepare": "npx husky install"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.21",
+    "rimraf": "^4.4.1",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "storybook": "^6.5.16"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "@storybook/vue3": "^6.5.16",
+    "@types/jest": "^27.0.1",
+    "@types/lodash-es": "^4.17.6",
+    "@types/uuid": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-typescript": "^5.0.8",
+    "@vue/cli-plugin-unit-jest": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/test-utils": "^2.0.0-0",
+    "@vue/vue3-jest": "^27.0.0-alpha.1",
+    "axios": "^1.3.4",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.3.0",
+    "core-js": "^3.8.3",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
+    "jest": "^27.0.5",
+    "rollup": "^3.20.0",
+    "rollup-plugin-css-only": "^4.3.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.9.5",
+    "uuid": "^9.0.0",
+    "vue": "^3.2.13",
+    "vue-loader": "^16.8.3",
+    "vue-router": "^4.1.6"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "parser": "vue-eslint-parser",
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@typescript-eslint/parser"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "@typescript-eslint/eslint-plugin"
+    ],
+    "rules": {
+      "@typescript-eslint/no-unused-vars": [
+        2,
+        {
+          "args": "none"
+        }
+      ]
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)",
+          "**/tests/unit/**/*.spec.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
