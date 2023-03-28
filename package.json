@@ -1,6 +1,6 @@
 {
   "name": "mini-fe-component",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "main": "dist/mini-fe-component.umd.js",
   "module": "dist/mini-fe-component.esm.js",
@@ -29,6 +29,7 @@
     "prepare": "npx husky install"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.20.2",
     "lodash-es": "^4.17.21",
     "rimraf": "^4.4.1",
     "rollup-plugin-dts": "^5.3.0",
@@ -80,6 +81,7 @@
     "vue-loader": "^16.8.3",
     "vue-router": "^4.1.6"
   },
+  "type": "module",
   "eslintConfig": {
     "root": true,
     "env": {
